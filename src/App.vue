@@ -68,7 +68,7 @@ const handleClac = () => {
               <currency-input v-model="planoSaude" label="Plano de Saúde"
                 infoText="Preencha o plano de saúde da seguinte forma: caso fosse contratar um plano de saúde similar ao que possui, quanto gastaria? algum valor é descontado para o plano de saúde? deduza do valor informado. Ex: Para contratar meu plano atual pagaria 800 reais, porém tenho desconto em folha de 250 reais, informe 800 - 250 = 550" />
               <currency-input v-model="plr" label="PLR" />
-              <currency-input v-model="outro" label="Outros beneficios"
+              <currency-input v-model="outro" label="Outros benefícios"
                 infoText="Utilize o campo outros para incluir plano de auxílio a medicamentos, bônus que não seja PLR ou coisas do tipo, esse campo será somado integralmente ao valor mensal. Diferente do campo de PLR, este sendo valor anual passará por desconto IRRF e será dividido por 12." />
               <div class="field">
                 <label class="label">Dependentes</label>
@@ -90,14 +90,14 @@ const handleClac = () => {
       <div class="columns mt-1">
         <div class="column">
           <div class="content" v-if="(resultCLT as ResultadoCLT).salLiqBeneficios">
-            <h3>Valor liquido entregue CLT</h3>
+            <h3>Valor líquido entregue CLT</h3>
             <p class="is-size-3">{{ (resultCLT as ResultadoCLT).salLiqBeneficios?.toLocaleString('pt-BR', {
                 style: 'currency', currency:
                   'BRL'
               }) }}</p>
             <span class="is-flex is-flex-direction-column">
               <span>
-                <b>Salario Bruto: </b> {{ (resultCLT as ResultadoCLT).salarioBruto?.toLocaleString('pt-BR', {
+                <b>Salário Bruto: </b> {{ (resultCLT as ResultadoCLT).salarioBruto?.toLocaleString('pt-BR', {
                 style:
                   'currency', currency: 'BRL'
               }) }}
@@ -115,7 +115,7 @@ const handleClac = () => {
               }) }}
               </span>
               <span>
-                <b>Slario Liquido: </b> {{ (resultCLT as ResultadoCLT).salarioLiquido?.toLocaleString('pt-BR', {
+                <b>Salário Líquido: </b> {{ (resultCLT as ResultadoCLT).salarioLiquido?.toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL'
               }) }}
@@ -127,7 +127,7 @@ const handleClac = () => {
               }) }}
               </span>
               <span>
-                <b>Decimo Terceiro p/ mês: </b> {{ (resultCLT as
+                <b>Décimo Terceiro p/ mês: </b> {{ (resultCLT as
                 ResultadoCLT).decimoTerceiroMes?.toLocaleString('pt-BR',
                   {
                     style:
@@ -137,7 +137,7 @@ const handleClac = () => {
               <span>
                 <b>Ferias + Terço de ferias p/ mês:
                   <span class="icon has-text-info"
-                    title="Férias são encaradas aqui como um decimo quarto salario, então o valor do salário passa pelo desconto é somado o 1/3 de férias, dividido por 12 e adicionado como um benefício, no caso da sua negociação PJ incluir férias, faça o seguinte, pegue o salário negociado, divida por 12 e some ao salário informado Ex: Negociei férias como no regime CLT e salário de 12k irei informar 12k + (12k + 12k/3)/12 = R$ 13.333,00.">
+                    title="Férias são encaradas aqui como um décimo quarto salário, então o valor do salário passa pelo desconto é somado o 1/3 de férias, dividido por 12 e adicionado como um benefício, no caso da sua negociação PJ incluir férias, faça o seguinte, pegue o salário negociado, divida por 12 e some ao salário informado Ex: Negociei férias como no regime CLT e salário de 12k irei informar 12k + (12k + 12k/3)/12 = R$ 13.333,00.">
                     <i class="fas fa-info-circle"></i>
                   </span> </b> {{ (resultCLT as ResultadoCLT).feriasMes?.toLocaleString('pt-BR', {
                 style:
@@ -164,13 +164,13 @@ const handleClac = () => {
                 }}
               </span>
               <span>
-                <b>Outros Beneficios: </b> {{ (resultCLT as ResultadoCLT).outros?.toLocaleString('pt-BR', {
+                <b>Outros Benefícios: </b> {{ (resultCLT as ResultadoCLT).outros?.toLocaleString('pt-BR', {
                 style: 'currency', currency:
                   'BRL'
               }) }}
               </span>
               <span>
-                <b>Salario Liquido + Beneficios: </b> {{ (resultCLT as
+                <b>Salário Líquido + Benefícios: </b> {{ (resultCLT as
                 ResultadoCLT).salLiqBeneficios?.toLocaleString('pt-BR', {
                   style:
                     'currency', currency: 'BRL'
@@ -181,7 +181,7 @@ const handleClac = () => {
         </div>
         <div class="column">
           <div class="content" v-if="(resultPJFatorR as ResultadoPJFatorR)?.liquidoPJMes">
-            <h3>Salario liquido PJ(c/ Fator R)</h3>
+            <h3>Salário líquido PJ(c/ Fator R)</h3>
             <p class="is-size-3">
               {{
                 (resultPJFatorR as ResultadoPJFatorR).liquidoPJMes?.toLocaleString('pt-BR', {
@@ -191,7 +191,7 @@ const handleClac = () => {
             </p>
             <span class="is-flex is-flex-direction-column">
               <span>
-                <b>Deconto Simples Nacional Mês: </b> {{ ((resultPJFatorR as ResultadoPJFatorR).descontoPJ /
+                <b>Desconto Simples Nacional Mês: </b> {{ ((resultPJFatorR as ResultadoPJFatorR).descontoPJ /
                 12)?.toLocaleString('pt-BR', {
                   style:
                     'currency', currency: 'BRL'
@@ -204,7 +204,8 @@ const handleClac = () => {
               }) }}
               </span>
               <span>
-                <b>IRRF (Incluso IRRF 13 Salario): </b> {{ (((resultPJFatorR as ResultadoPJFatorR).resultCltFatorR?.irrf
+                <b>IRRF (Incluso IRRF 13º Salário): </b> {{ (((resultPJFatorR as
+                ResultadoPJFatorR).resultCltFatorR?.irrf
                 * 13) /
                 12)?.toLocaleString('pt-BR', {
                   style:
@@ -222,7 +223,7 @@ const handleClac = () => {
         </div>
         <div class="column">
           <div class="content" v-if="(resultPJ as ResultadoPJ).liquidoPJMes">
-            <h3>Salario liquido PJ</h3>
+            <h3>Salário líquido PJ</h3>
             <p class="is-size-3">
               {{
                 (resultPJ as ResultadoPJ).liquidoPJMes?.toLocaleString('pt-BR', {
@@ -232,7 +233,7 @@ const handleClac = () => {
             </p>
             <span class="is-flex is-flex-direction-column">
               <span>
-                <b>Deconto Simples Nacional Mês: </b> {{ ((resultPJ as ResultadoPJ).descontoPJ /
+                <b>Desconto Simples Nacional Mês: </b> {{ ((resultPJ as ResultadoPJ).descontoPJ /
                 12)?.toLocaleString('pt-BR', {
                   style:
                     'currency', currency: 'BRL'
