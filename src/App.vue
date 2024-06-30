@@ -191,6 +191,13 @@ const handleClac = () => {
             </p>
             <span class="is-flex is-flex-direction-column">
               <span>
+                <b>Salário Bruto: </b> {{ ((resultPJFatorR as ResultadoPJFatorR).salarioBruto)?.toLocaleString('pt-BR',
+                {
+                  style:
+                    'currency', currency: 'BRL'
+                }) }}
+              </span>
+              <span>
                 <b>Encargo Simples Nacional Mês: </b> {{ ((resultPJFatorR as ResultadoPJFatorR).descontoPJ /
                 12)?.toLocaleString('pt-BR', {
                   style:
@@ -198,13 +205,14 @@ const handleClac = () => {
                 }) }}
               </span>
               <span>
-                <b>INSS: </b> {{ (resultPJFatorR as ResultadoPJFatorR).resultCltFatorR?.inss?.toLocaleString('pt-BR', {
-                style:
-                  'currency', currency: 'BRL'
-              }) }}
+                <b>INSS Prolabore: </b> {{ (resultPJFatorR as
+                ResultadoPJFatorR).resultCltFatorR?.inss?.toLocaleString('pt-BR', {
+                  style:
+                    'currency', currency: 'BRL'
+                }) }}
               </span>
               <span>
-                <b>IRRF (Incluso IRRF 13º Salário): </b> {{ (((resultPJFatorR as
+                <b>IRRF (Incluso IRRF 13º Salário) Prolabore: </b> {{ (((resultPJFatorR as
                 ResultadoPJFatorR).resultCltFatorR?.irrf
                 * 13) /
                 12)?.toLocaleString('pt-BR', {
@@ -217,6 +225,23 @@ const handleClac = () => {
                 style:
                   'currency', currency: 'BRL'
               }) }}
+              </span>
+              <span>
+                <b>Salário Líquido: </b> {{ ((resultPJFatorR as
+                ResultadoPJFatorR).liquidoPJMes)?.toLocaleString('pt-BR',
+                  {
+                    style:
+                      'currency', currency: 'BRL'
+                  }) }}
+              </span>
+              <span>
+                <b>Alíquota Simples Nacional: </b> {{ ((resultPJFatorR as ResultadoPJFatorR).aliquota * 100).toFixed(2)
+                }}%
+              </span>
+              <span>
+                <b>Alíquota Efetiva: </b> {{ (((resultPJFatorR as ResultadoPJFatorR).salarioBruto - (resultPJFatorR as
+                ResultadoPJFatorR).liquidoPJMes) / (resultPJFatorR as ResultadoPJFatorR).salarioBruto * 100).toFixed(2)
+                }}%
               </span>
             </span>
           </div>
@@ -233,17 +258,36 @@ const handleClac = () => {
             </p>
             <span class="is-flex is-flex-direction-column">
               <span>
-                <b>Desconto Simples Nacional Mês: </b> {{ ((resultPJ as ResultadoPJ).descontoPJ /
+                <b>Salário Bruto: </b> {{ ((resultPJ as
+                ResultadoPJ).salarioBruto)?.toLocaleString('pt-BR',
+                  {
+                    style:
+                      'currency', currency: 'BRL'
+                  }) }}
+              </span>
+              <span>
+                <b>Encargo Simples Nacional Mês: </b> {{ ((resultPJ as ResultadoPJ).descontoPJ /
                 12)?.toLocaleString('pt-BR', {
                   style:
                     'currency', currency: 'BRL'
                 }) }}
               </span>
               <span>
+                <b>Alíquota Simples Nacional: </b> {{ (resultPJ as ResultadoPJ).aliquota * 100 }}%
+              </span>
+              <span>
                 <b>Contador: </b> {{ ((resultPJ as ResultadoPJ).gastoContador)?.toLocaleString('pt-BR', {
                 style:
                   'currency', currency: 'BRL'
               }) }}
+              </span>
+              <span>
+                <b>Salário Líquido: </b> {{ ((resultPJ as
+                ResultadoPJ).liquidoPJMes)?.toLocaleString('pt-BR',
+                  {
+                    style:
+                      'currency', currency: 'BRL'
+                  }) }}
               </span>
             </span>
           </div>

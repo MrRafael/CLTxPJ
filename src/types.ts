@@ -17,9 +17,11 @@ export interface ResultadoCLT extends DescontosCLT {
 };
 
 export interface ResultadoPJ {
+    salarioBruto: number,
     descontoPJ: number,
     gastoContador: number,
     liquidoPJMes: number,
+    aliquota: number
 }
 
 export interface ResultadoPJFatorR extends ResultadoPJ {
