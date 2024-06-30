@@ -191,7 +191,7 @@ const handleClac = () => {
             </p>
             <span class="is-flex is-flex-direction-column">
               <span>
-                <b>Desconto Simples Nacional Mês: </b> {{ ((resultPJFatorR as ResultadoPJFatorR).descontoPJ /
+                <b>Encargo Simples Nacional Mês: </b> {{ ((resultPJFatorR as ResultadoPJFatorR).descontoPJ /
                 12)?.toLocaleString('pt-BR', {
                   style:
                     'currency', currency: 'BRL'
