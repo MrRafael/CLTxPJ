@@ -1,60 +1,60 @@
 export const inssAliquota = [
     {
         de: 0,
-        ate: 1412,
+        ate: 1518,
         desconto: 0.075,
         aDeduzir: 0
     },
     {
-        de: 1412.01,
-        ate: 2666.68,
+        de: 1518.01,
+        ate: 2793.88,
         desconto: 0.09,
-        aDeduzir: 21.18
+        aDeduzir: 22.77
     },
     {
-        de: 2666.69,
-        ate: 4000.03,
+        de: 2793.89,
+        ate: 4190.83,
         desconto: 0.12,
-        aDeduzir: 101.18
+        aDeduzir: 106.59
     },
     {
-        de: 4000.04,
-        ate: 7786.02,
+        de: 4190.84,
+        ate: 8157.41,
         desconto: 0.14,
-        aDeduzir: 181.18
+        aDeduzir: 190.40
     }
 ];
 
 export const irrfAliquota = [
     {
         de: 0,
-        ate: 2259.2,
+        ate: 2428.80,
         desconto: 0,
         aDeduzir: 0
     },
     {
-        de: 2259.21,
+        de: 2548.81,
         ate: 2826.65,
         desconto: 0.075,
-        aDeduzir: 169.44
+        aDeduzir: 182.16
     },
     {
         de: 2826.66,
         ate: 3751.05,
         desconto: 0.15,
-        aDeduzir: 381.44
+        aDeduzir: 394.16
     },
     {
         de: 3751.06,
         ate: 4664.68,
         desconto: 0.225,
-        aDeduzir: 662.77
+        aDeduzir: 675.49
     },
     {
         de: 4664.69,
         ate: Infinity,
         desconto: 0.275,
-        aDeduzir: 896
+        aDeduzir: 908.73
     }
 ];
 
